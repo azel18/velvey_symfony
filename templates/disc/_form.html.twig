@@ -1,0 +1,11 @@
+ {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.year) }}
+    {{ form_row(form.picture2) }}
+    {{ form_row(form.label) }}
+    {{ form_row(form.genre) }}
+    {{ form_row(form.price) }}
+    {{ form_row(form.artist) }}
+    <button class="btn">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}
+

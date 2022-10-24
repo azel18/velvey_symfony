@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Disque
+{% endblock %}
+
+{% block body %}
+	<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="{{ path('app_disc_index') }}">Disque</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">Nouveau Disque</li>
+		</ol>
+	</nav>
+
+	<div class="container">
+		
+			<div class="row">
+				<div class="d-flex justify-content-center bg-primary mb-5">
+					<h1>Nouveau Disque</h1>
+				</div>
+			</div>
+			{{ include('disc/_form.html.twig') }}
+		
+	
+        <a href="{{ path('app_disc_index') }}">Retour a la liste des disques</a>
+        </div>
+{% endblock %}

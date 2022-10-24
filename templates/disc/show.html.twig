@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Disc
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+	<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="{{ path ('app_disc_index') }}">Disque</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">{{ disc.title }}</li>
+		</ol>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="d-flex justify-content-center mt-5 mb-5 bg-primary">
+				<h1>Disque</h1>
+			</div>
+		</div>
+		
+    <div class="table ">
+		<table class="col-6 col-4">
+			<tbody>
+                Titre<input class="form-control" type="text" value="{{ disc.title }}"readonly>
+           
+				<tr>
+					<th>Id</th><td>{{ disc.id }}</td>
+				</tr>
+				<tr>
+					<th>Titre</th><td>{{ disc.title }}</td>
+				</tr>
+				<tr>
+					<th>Année</th><td>{{ disc.year }}</td>
+				</tr>
+				<tr>
+					<th>Picture</th><td>{{ disc.picture }}</td>
+				</tr>
+				<tr>
+					<th>Label</th><td>{{ disc.label }}</td>
+				</tr>
+				<tr>
+					<th>Genre</th><td>{{ disc.genre }}</td>
+				</tr>
+				<tr>
+					<th>Prix</th><td>{{ disc.price }}</td>
+				</tr>
+			</tbody>
+		</table>
+    </div>
+
+		<div class="col-4 mb-2">
+			<img class=" img-fluid" src="{{asset ('img/')}}{{disc.picture}} ">
+		
+        </div>
+
+        <div class="d-flex">
+    <div class="mod">
+        <a class="btn " href="{{ path('app_disc_index') }}">Retour a la liste des disques</a>
+    </div>
+    <div>
+		<a class="btn btn-danger mx-2" href="{{ path('app_disc_edit', {'id': disc.id}) }}">Modifier le disque</a>
+    </div>
+            {{ include('disc/_delete_form.html.twig') }}
+        </div>
+	</div>
+{% endblock %}
